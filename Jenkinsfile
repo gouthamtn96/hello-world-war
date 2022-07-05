@@ -4,7 +4,7 @@ pipeline {
         choice(name: 'choices', choices: ['one', 'two'])
     }
     stages {
-        stages('clone step'){
+        stage('clone step'){
             steps {
                 sh 'rm -rf hello-world-war'
               sh 'git clone https://github.com/gouthamtn96/hello-world-war.git'
