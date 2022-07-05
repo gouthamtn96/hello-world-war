@@ -1,20 +1,9 @@
 pipeline {
     agent { label 'java' } 
+    parameters {
+        choice(name: 'choices', choices: ['one', 'two'])
+    }
     stages {
-        stage('setting up parameter') {
-            steps {
-                script {
-                    properties([
-                        parameters([
-                            choice(
-                                choices: ['test','development'],
-                                name : 'slaves'
-                                )
-                            ])
-                        ])
-                }
-            }
-        }
         stages('clone step'){
             steps {
                 sh 'rm -rf hello-world-war'
