@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'java' } 
     stages {
-        stage('setting up parameter'){
+        stage('setting up parameter') {
             steps {
                 script {
                     properties([
